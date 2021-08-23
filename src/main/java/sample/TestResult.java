@@ -1,5 +1,10 @@
 package sample;
 
+import sample.common.ResultTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestResult {
 
     private long id;
@@ -21,7 +26,7 @@ public class TestResult {
     private ValueType valueType;
     private long testId;
 //    private List<ResultHistoryItem> history = new ArrayList<>();
-//    private List<ResultTemplate> templateList = new ArrayList<>();
+    private List<ResultTemplate> templateList = new ArrayList<>();
 //    private TestFunc func;
 
 
@@ -167,5 +172,26 @@ public class TestResult {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public static class Pathology {
+
+        public static final int NORMAL = 0;
+        public static final int LOW = -1;
+        public static final int PAT_LOW = -2;
+        public static final int CRIT_LOW = -3;
+        public static final int HIGH = 1;
+        public static final int PAT_HIGH = 2;
+        public static final int CRIT_HIGH = 3;
+        public static final int PATHOLOGY = 4;
+
+    }
+
+    public List<ResultTemplate> getTemplateList() {
+        return templateList;
+    }
+
+    public void setTemplateList(List<ResultTemplate> templateList) {
+        this.templateList = templateList;
     }
 }
