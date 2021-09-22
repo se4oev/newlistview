@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="newlistview" target="8" />
+      <module name="newlistview" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
