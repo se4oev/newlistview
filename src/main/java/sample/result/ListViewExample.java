@@ -5,14 +5,21 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.IndexedCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.skin.VirtualFlow;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import sample.TestResult;
 import sample.TestResultLoader;
@@ -45,6 +52,45 @@ public class ListViewExample implements Initializable {
 
         listView.addEventFilter(IResultEvents.RESULT_CHANGED, e -> saveResult(e.getData()));
         listView.addEventFilter(IResultEvents.NEXT_CELL, e -> nextCell());
+
+        pane.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent e) {
+                e.consume();
+                if (e.getCode() == KeyCode.TAB) {
+                    if (e.isShiftDown())
+                        selectItem(listView, false);
+                    else
+                        selectItem(listView, true);
+                }
+            }
+        });
+    }
+
+    private void selectItem(ListView listView, boolean b) {
+        if (b) {
+            int oldIndex = listView.getSelectionModel().getSelectedIndex();
+            int newIndex = oldIndex + 1;
+            VirtualFlow flow = (VirtualFlow) listView.lookup(".virtual-flow");
+            int firstCell = flow.getFirstVisibleCell().getIndex();
+            int lastCell = flow.getLastVisibleCell().getIndex();
+            listView.getSelectionModel().clearSelection();
+            listView.getSelectionModel().select(newIndex);
+            if (newIndex < firstCell || newIndex > lastCell) {
+                listView.scrollTo(newIndex);
+            }
+        } else {
+            int oldIndex = listView.getSelectionModel().getSelectedIndex();
+            int newIndex = oldIndex - 1;
+            VirtualFlow flow = (VirtualFlow) listView.lookup(".virtual-flow");
+            int firstCell = flow.getFirstVisibleCell().getIndex();
+            int lastCell = flow.getLastVisibleCell().getIndex();
+            listView.getSelectionModel().clearSelection();
+            listView.getSelectionModel().select(newIndex);
+            if (newIndex < firstCell || newIndex > lastCell) {
+                listView.scrollTo(newIndex);
+            }
+        }
     }
 
     private <T extends Event> void nextCell() {
