@@ -1,4 +1,4 @@
-package sample;
+package sample.utils;
 
 import sample.common.ResultTemplate;
 import sample.entity.ResultType;

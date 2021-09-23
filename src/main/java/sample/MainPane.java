@@ -1,4 +1,4 @@
-package sample.result;
+package sample;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,10 +18,12 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import sample.entity.TestITestResult;
-import sample.TestResultLoader;
 import sample.entity.ResultType;
+import sample.result.AbstractResultCell;
+import sample.result.IResultEvents;
+import sample.utils.TestResultLoader;
 
-public class ListViewExample implements Initializable {
+public class MainPane implements Initializable {
 
     @FXML
     private ListView resultList;
@@ -29,7 +31,7 @@ public class ListViewExample implements Initializable {
     @FXML
     Pane pane;
 
-    public ListViewExample() {
+    public MainPane() {
     }
 
     @Override
@@ -114,7 +116,7 @@ public class ListViewExample implements Initializable {
             }
             resultList.getItems().addAll(list);
         } catch (IOException ex) {
-            Logger.getLogger(ListViewExample.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainPane.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
