@@ -5,9 +5,9 @@ import sample.common.ResultTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestResult {
+public class TestResult implements ResultItem {
 
-    private long id;
+    private Long id;
     private String text;
     private String executorText;
     private String normText;
@@ -23,7 +23,7 @@ public class TestResult {
     private int optionalStatus;
     private boolean isCurrentWorkplace;
     private boolean isEditable;
-    private ValueType valueType;
+    private ResultType resultType;
     private long testId;
 //    private List<ResultHistoryItem> history = new ArrayList<>();
     private List<ResultTemplate> templateList = new ArrayList<>();
@@ -142,12 +142,14 @@ public class TestResult {
         isEditable = editable;
     }
 
-    public ValueType getValueType() {
-        return valueType;
+    @Override
+    public ResultType getResultType() {
+        return resultType;
     }
 
-    public void setValueType(ValueType valueType) {
-        this.valueType = valueType;
+    @Override
+    public void setResultType(ResultType resultType) {
+        this.resultType = resultType;
     }
 
     public long getTestId() {
@@ -158,16 +160,17 @@ public class TestResult {
         this.testId = testId;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getText() {
         return text;
+    }
+
+    @Override
+    public void setId(Long id) {
+
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public void setText(String text) {

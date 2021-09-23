@@ -1,13 +1,12 @@
 sample\images\Images.class
-sample\ValueType.class
 sample\common\ResultTemplate.class
 sample\result\CodesetPopupField.class
+sample\ResultItem.class
 sample\result\NumItem.class
 sample\common\PathologyStatus.class
-sample\result\ListViewExample$1.class
 sample\TestResult$Pathology.class
 sample\images\AppImages.class
-sample\Sample.class
+sample\result\TestGroup.class
 sample\result\AbstractItem.class
 sample\common\BaseEvent.class
 sample\result\CodesetPopupGraphic.class
@@ -16,6 +15,7 @@ sample\result\TextItem.class
 sample\result\ListViewExample.class
 sample\common\AppUtils.class
 sample\result\ListItem.class
+sample\ResultType.class
 sample\result\FixItem.class
 sample\TestResult.class
 sample\Main.class

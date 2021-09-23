@@ -6,16 +6,12 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.IndexedCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.skin.VirtualFlow;
 import javafx.scene.input.KeyCode;
@@ -23,16 +19,12 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import sample.TestResult;
 import sample.TestResultLoader;
-import sample.ValueType;
+import sample.ResultType;
 
-/**
- *
- * @author hemant-pc
- */
 public class ListViewExample implements Initializable {
 
     @FXML
-    private ListView listView;
+    private ListView resultList;
 
     @FXML
     Pane pane;
@@ -50,19 +42,13 @@ public class ListViewExample implements Initializable {
             }
         });
 
-        listView.addEventFilter(IResultEvents.RESULT_CHANGED, e -> saveResult(e.getData()));
-        listView.addEventFilter(IResultEvents.NEXT_CELL, e -> nextCell());
+        resultList.addEventFilter(IResultEvents.RESULT_CHANGED, e -> saveResult(e.getData()));
+        resultList.addEventFilter(IResultEvents.NEXT_CELL, e -> nextCell());
 
-        pane.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent e) {
-                e.consume();
-                if (e.getCode() == KeyCode.TAB) {
-                    if (e.isShiftDown())
-                        selectItem(listView, false);
-                    else
-                        selectItem(listView, true);
-                }
+        pane.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
+            e.consume();
+            if (e.getCode() == KeyCode.TAB) {
+                selectItem(resultList, !e.isShiftDown());
             }
         });
     }
@@ -94,7 +80,7 @@ public class ListViewExample implements Initializable {
     }
 
     private <T extends Event> void nextCell() {
-        listView.getSelectionModel().selectNext();
+        resultList.getSelectionModel().selectNext();
     }
 
     private <T extends Event> void saveResult(TestResult t) {
@@ -104,17 +90,19 @@ public class ListViewExample implements Initializable {
     private void loadData() {
         try {
             ObservableList<Pane> list = FXCollections.observableArrayList();
-            for (int i = 1; i <= 10; i++) {
+            for (int i = 1; i <= 20; i++) {
                 TestResult testResult = new TestResultLoader().getTestResult();
                 String className = "";
-                if (testResult.getValueType() == ValueType.LIST) {
+                if (testResult.getResultType() == ResultType.LIST) {
                     className = "ListItem.fxml";
-                } else if (testResult.getValueType() == ValueType.FIX_LIST) {
+                } else if (testResult.getResultType() == ResultType.FIX_LIST) {
                     className = "FixItem.fxml";
-                } else if (testResult.getValueType() == ValueType.NUM) {
+                } else if (testResult.getResultType() == ResultType.NUM) {
                     className = "NumItem.fxml";
-                } else if (testResult.getValueType() == ValueType.TEXT) {
+                } else if (testResult.getResultType() == ResultType.TEXT) {
                     className = "TextItem.fxml";
+                } else if (testResult.getResultType() == ResultType.TEST_GROUP) {
+                    className = "TestGroup.fxml";
                 }
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(className));
                 Pane listItem = fxmlLoader.load();
@@ -124,14 +112,14 @@ public class ListViewExample implements Initializable {
                 list.add(listItem);
 
             }
-            listView.getItems().addAll(list);
+            resultList.getItems().addAll(list);
         } catch (IOException ex) {
             Logger.getLogger(ListViewExample.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     private void refreshAll() {
-        listView.getItems().clear();
+        resultList.getItems().clear();
         loadData();
     }
 

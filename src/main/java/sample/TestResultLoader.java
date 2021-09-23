@@ -10,12 +10,21 @@ public class TestResultLoader {
     private static int counter = 1;
 
     public TestResult getTestResult() {
-        int random = (int) (Math.random() * 4);
+        int random = (int) (Math.random() * 5);
         if (random == 0) return getNumResult();
         if (random == 1) return getTextResult();
         if (random == 2) return getFixListResult();
         if (random == 3) return getListResult();
+        if (random == 4) return getTestGroup();
         return null;
+    }
+
+    private TestResult getTestGroup() {
+        TestResult testResult = new TestResult();
+        testResult.setResultType(ResultType.TEST_GROUP);
+        testResult.setId((long) counter++);
+        testResult.setText("Группа результатов");
+        return testResult;
     }
 
     private TestResult getNumResult() {
@@ -23,7 +32,7 @@ public class TestResultLoader {
         testResult.setId((long) counter++);
         testResult.setValue("12.5");
         testResult.setNote("fdsfds");
-        testResult.setValueType(ValueType.NUM);
+        testResult.setResultType(ResultType.NUM);
         testResult.setEditable(true);
         testResult.setSuppressStatus(0);
         testResult.setReportStatus(0);
@@ -41,7 +50,7 @@ public class TestResultLoader {
         testResult.setId((long) counter++);
         testResult.setValue("жидкий");
         testResult.setNote("fdsfds");
-        testResult.setValueType(ValueType.TEXT);
+        testResult.setResultType(ResultType.TEXT);
         testResult.setEditable(true);
         testResult.setSuppressStatus(0);
         testResult.setReportStatus(0);
@@ -59,7 +68,7 @@ public class TestResultLoader {
         testResult.setId((long) counter++);
         testResult.setValue("три пять");
         testResult.setNote("fdsfds");
-        testResult.setValueType(ValueType.FIX_LIST);
+        testResult.setResultType(ResultType.FIX_LIST);
         testResult.setEditable(true);
         testResult.setSuppressStatus(0);
         testResult.setReportStatus(0);
@@ -77,7 +86,7 @@ public class TestResultLoader {
         testResult.setId((long) counter++);
         testResult.setValue("пять два");
         testResult.setNote("fdsfds");
-        testResult.setValueType(ValueType.LIST);
+        testResult.setResultType(ResultType.LIST);
         testResult.setEditable(true);
         testResult.setSuppressStatus(0);
         testResult.setReportStatus(0);

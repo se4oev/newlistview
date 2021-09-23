@@ -116,9 +116,4 @@
             </children>
         </HBox>
     </children>
-    <stylesheets>
-        <URL value="@../styles/styles.css" />
-        <URL value="@../styles/research_styles.css" />
-        <URL value="@../styles/custom_controls.css" />
-    </stylesheets>
 </AnchorPane>
