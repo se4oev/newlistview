@@ -1,0 +1,79 @@
+.label {
+    -fx-wrap-text : true;
+}
+
+.scroll-pane {
+    -fx-fit-to-width : true;
+}
+
+#sampleBox {
+    -fx-spacing : 25;
+}
+
+#sample > #title {
+    -fx-padding : 10;
+    -fx-background-color: linear-gradient(to bottom, white, #dce6ef);
+}
+
+#sample > #title .label {
+    -fx-text-fill : grey;
+}
+
+#sample #title #specimen {
+    -fx-alignment : center;
+}
+
+
+#labDep {
+    -fx-padding : 16;
+}
+
+#labDep > #title {
+    -fx-font-weight : bold;
+    -fx-alignment : center;
+}
+
+#workplace {
+    -fx-alignment : center;
+}
+
+#workplace > #title {
+    -fx-text-fill : grey;
+    -fx-padding : 16 0 8 0;
+}
+
+
+#result {
+    -fx-spacing : 10;
+    -fx-alignment : top-left;
+}
+
+#result #name,
+#result #value,
+#result #norm {
+    -fx-padding : 5 0 0 0;
+}
+
+#result #pathology {
+    -fx-pref-width : 25;
+    -fx-min-width : -fx-pref-width;
+    -fx-max-width : -fx-pref-width;
+}
+
+#result #name {
+    -fx-alignment : top-left;
+    -fx-font-weight : bold;
+}
+
+#result #value {
+    -fx-pref-width : 120;
+    -fx-min-width : -fx-pref-width;
+    -fx-max-width : -fx-pref-width;
+}
+
+#result #norm {
+    -fx-pref-width : 120;
+    -fx-min-width : -fx-pref-width;
+    -fx-max-width : -fx-pref-width;
+}
+

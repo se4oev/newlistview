@@ -1,0 +1,163 @@
+.ref-card-container {
+    -fx-background-color : #f4f4f4;
+}
+
+.edit-list {
+    -fx-background-color : white;
+}
+
+.test-order-table .table-row-cell:group {
+    -fx-background-color : papayawhip;
+}
+
+.test-order-table .table-row-cell:group .table-column {
+    -fx-underline : true;
+    -fx-text-fill : black;
+    -fx-font-weight : bold;
+}
+
+.list-view:focused .list-cell .test-text-field-cell .text-field {
+    -fx-prompt-text-fill: lightgrey;
+}
+
+/***********************************************************************************************************************
+  TabbedPane
+***********************************************************************************************************************/
+
+.mbio-tab-pane .tab-header-area * {
+    -fx-background-color : transparent;
+    -fx-border-color : transparent;
+}
+
+.mbio-tab-pane .tab {
+    -fx-background-radius : 15;
+    -fx-padding : 2 12 2 12;
+    -fx-pref-height : 23;
+    -fx-cursor : hand;
+}
+
+.mbio-tab-pane .tab .text {
+    -fx-translate-y : -2;
+}
+
+.mbio-tab-pane .tab:hover {
+    -fx-background-color : lightgrey;
+}
+
+.mbio-tab-pane .tab:selected {
+    -fx-background-color : -fx-focus-color;
+}
+
+.mbio-tab-pane .tab:selected .text {
+    -fx-fill : white;
+}
+
+.mbio-tab-pane .tab .text {
+    -fx-fill : #252525;
+}
+
+/***********************************************************************************************************************
+  Bacteria_TREE
+***********************************************************************************************************************/
+.bacteria_cell:group {
+    -fx-font-weight: bold;
+}
+
+.tree-view {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.tree-container {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+#column-optional {
+    -fx-alignment: top-center;
+}
+
+/***********************************************************************************************************************
+    Serv group editor
+***********************************************************************************************************************/
+
+
+#ServGroupView #btnRefresh {
+    -fx-background-image : url('../images/refresh.png');
+}
+
+#ServGroupView #btnAddGroup {
+    -fx-background-image : url('../images/add.png');
+}
+
+#ServGroupView #btnUpGroup {
+    -fx-background-image : url('../images/arrows/grey_up.png');
+}
+
+#ServGroupView #btnDownGroup {
+    -fx-background-image : url('../images/arrows/grey_down.png');
+}
+
+#ServGroupView #cross {
+    -fx-background-image : url('../images/buttons/cross_small.png');
+}
+
+#ServGroupView #cross,
+#ServGroupView #btnRefresh,
+#ServGroupView #btnAddGroup,
+#ServGroupView #btnUpGroup,
+#ServGroupView #btnDownGroup {
+    -fx-background-color : transparent;
+    -fx-background-position : center;
+    -fx-background-repeat : no-repeat;
+    -fx-background-size : auto;
+    -fx-pref-width : 32;
+    -fx-pref-height : -fx-pref-width;
+    -fx-cursor : hand;
+    -fx-opacity : 0.7;
+}
+
+#ServGroupView #btnRefresh:hover,
+#ServGroupView #btnAddGroup:hover,
+#ServGroupView #btnUpGroup:hover,
+#ServGroupView #btnDownGroup:hover {
+    -fx-opacity : 1;
+}
+
+#ServGroupView #cross {
+    -fx-pref-width : 25;
+    -fx-pref-height : -fx-pref-width;
+    -fx-min-width : -fx-pref-width;
+    -fx-padding : 0;
+}
+
+#ServGroupView #labelAdd {
+    -fx-pref-height : 25;
+}
+
+#ServGroupView #servGroupBox {
+    -fx-padding : 10 0 0 0;
+}
+
+#ServGroupView #ServGroupItem {
+    -fx-padding : 10 0 10 0;
+}
+
+#ServGroupView #ServGroupItem #content {
+    -fx-padding : 5 0 0 3;
+}
+
+#ServGroupView #ServGroupItem #labelAdd {
+    -fx-underline : true;
+    -fx-text-fill : -fx-focus-color;
+    -fx-cursor : hand;
+    -fx-padding : 0 0 0 25;
+}
+
+#ServGroupView #serv .label {
+    -fx-padding : 2 0 0 0;
+}
+
+#ServGroupView #serv .label {
+    -fx-wrap-text : true;
+}

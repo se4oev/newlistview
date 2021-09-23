@@ -1,0 +1,149 @@
+    /***********************************************************************************************************************
+  Buttons
+***********************************************************************************************************************/
+
+/* Top toggles */
+#btnDevices .image-view {
+    -fx-image : url('../images/tab_devices.png');
+}
+
+#btnResults .image-view {
+    -fx-image : url('../images/tab_results.png');
+}
+
+.lab-sample-row .progress-indicator .percentage {
+    -fx-opacity : 0;
+}
+
+.todoCountLabel {
+    -fx-background-color : linear-gradient(to bottom, #09c2f6, #0097DC);
+    -fx-border-color : white;
+    -fx-border-insets: -5 -6 -5 -6;
+    -fx-border-width : 2;
+    -fx-border-radius: 16;
+    -fx-background-radius: 15;
+    -fx-background-insets: -5 -5 -5 -5;
+    -fx-padding : -2 1 -2 1;
+
+}
+
+.todoCountLabel .text {
+    -fx-font-size : 16;
+    -fx-fill : white;
+}
+
+/***********************************************************************************************************************
+  Devices accordion
+***********************************************************************************************************************/
+
+.device-accordion .titled-pane .title {
+    -fx-border-color : transparent;
+    -fx-border-width : 2;
+}
+
+.device-accordion .titled-pane:expanded .title {
+    -fx-border-color : #09c2f6;
+    -fx-border-width : 2;
+}
+
+.device-accordion .titled-pane .content {
+    -fx-padding : 0 0 0 60;
+}
+
+.device-accordion .titled-pane,
+.device-accordion .titled-pane .content {
+    -fx-border-width: 0;
+}
+
+.device-accordion .titled-pane .title .arrow {
+    -fx-opacity : 0;
+}
+
+.device-accordion .titled-pane .title .lab-device-row {
+    -fx-padding : 0 -10 0 -20;
+}
+
+.lab-device-row #sample-count-label {
+    -fx-background-color : linear-gradient(to bottom, #00CBFD, #0097DC);
+    -fx-border-color : white;
+    -fx-border-width : 2;
+    -fx-border-radius: 15;
+    -fx-border-insets: 0 -6 0 -6;
+    -fx-background-radius: 15;
+    -fx-background-insets: 0 -6 0 -6;
+}
+
+.lab-device-row #sample-count-label .text {
+    -fx-font-size : 16;
+    -fx-fill : white;
+}
+
+.lab-device-row #overdriveIndicator {
+    -fx-fill : #ACF237;
+}
+
+.lab-device-row:limit #overdriveIndicator {
+    -fx-fill : gold;
+}
+
+.lab-device-row:overdrive #overdriveIndicator {
+    -fx-fill : #FF4D6A;
+}
+
+/***********************************************************************************************************************
+  Mockup
+***********************************************************************************************************************/
+
+/*
+.sample-info-pane {
+    -fx-background-image : url('../../../../../../../test/resources/mockup/SampleInfoPane.png');
+}
+*/
+
+/*
+.lab-sample-row {
+    -fx-background-image : url('../../../../../../../test/resources/mockup/LabSampleRow.png');
+}
+*/
+
+/*
+.test-result-row {
+    -fx-background-image : url('../../../../../../../test/resources/mockup/TestResultRow.png');
+}
+*/
+
+/*
+.lab-device-row {
+    -fx-background-image : url('../../../../../../../test/resources/mockup/LabDeviceRow.png');
+}
+*/
+.filters-footer {
+   -fx-border-width: 0 1 0 0;
+   -fx-border-color: lightgrey;
+}
+
+.list-cell:even .test-result-row:mandatory {
+    -fx-background-color: #E1F1FA;
+}
+
+.list-cell:odd .test-result-row:mandatory {
+    -fx-background-color: #DCECF5;
+}
+
+.list-cell:even .test-result-row:mandatory:hover {
+    -fx-background-color: derive(#E1F1FA, -10%);
+}
+
+.list-cell:odd .test-result-row:mandatory:hover {
+    -fx-background-color: derive(#DCECF5, -10%);
+}
+
+.list-cell .test-result-row:mandatory .text-area .content,
+.list-cell .test-result-row:mandatory .text-area,
+.list-cell .test-result-row:mandatory .text-area .scroll-pane,
+.list-cell .test-result-row:mandatory .text-area .viewport {
+    -fx-background-color : #FCFDFE;
+}
+
+
+

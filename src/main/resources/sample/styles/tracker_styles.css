@@ -1,0 +1,101 @@
+.tracker-root-pane .filters-footer {
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: lightgrey;
+}
+
+/* Filter labels */
+.filter-label .label {
+    -fx-alignment : center;
+    -fx-font-size : 14;
+}
+
+.filter-label .text {
+    -fx-fill : white;
+    -fx-font-weight : bold;
+}
+
+.filter-label-cross {
+    -fx-cursor : hand;
+}
+
+.filter-label-cross Line {
+    -fx-stroke-width : 2;
+    -fx-stroke : #f4f4f4;
+}
+
+.filter-label-polygon {
+    -fx-opacity : 1;
+    -fx-fill : -fx-focus-color;
+    -fx-stroke : -fx-focus-color;
+    -fx-stroke-width : 5;
+    -fx-stroke-line-cap : round;
+    -fx-stroke-line-join : round;
+}
+
+/* Filter preset labels */
+.filter-label .text-field:disabled {
+    -fx-opacity: 1.0;
+}
+
+.filter-pane .filter-label {
+    -fx-cursor : hand;
+}
+
+.filter-label .text-field {
+    -fx-min-width : 50;
+    -fx-pref-width : 50;
+    -fx-min-height : 20;
+    -fx-pref-height : 24;
+    -fx-background-color : transparent;
+    -fx-alignment : center;
+    -fx-font-size : 14;
+    -fx-text-fill : white;
+    -fx-font-weight : bold;
+    -fx-focus-traversable : false;
+    -fx-translate-y : -2;
+    -fx-highlight-fill : blue;
+}
+
+.filter-label-tooltip .text {
+    -fx-fill: black;
+}
+
+/* Filter pane buttons */
+#btnApply {
+    -fx-background-color : -fx-focus-color;
+    -fx-text-fill : white;
+    -fx-cursor : hand;
+}
+
+#btnSave,
+#btnClear {
+    -fx-background-color : derive(grey, 80%);
+    -fx-background-radius : 3;
+    -fx-cursor : hand;
+}
+
+#btnSave:hover,
+#btnClear:hover {
+    -fx-background-color : derive(grey, 90%);
+}
+
+#btnApply:hover {
+    -fx-background-color : derive(-fx-focus-color, 10%);
+}
+
+.date-shortcuts .text {
+    -fx-underline: true;
+    -fx-fill : -fx-focus-color;
+    -fx-cursor : hand;
+}
+
+.cross:hover .text {
+    -fx-fill : black;
+}
+
+.cross .text {
+    -fx-font-size : 16;
+    -fx-font-weight : bold;
+    -fx-fill : grey;
+    -fx-cursor : hand;
+}

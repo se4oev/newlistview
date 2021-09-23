@@ -1,0 +1,4 @@
+#moduleContainer {
+    -fx-background-color : #f4f4f4;
+    -fx-effect : dropshadow(gaussian, #727272, 10, 0, 0, 0);
+}

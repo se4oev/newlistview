@@ -1,0 +1,356 @@
+/***********************************************************************************************************************
+  pane
+***********************************************************************************************************************/
+.border-pane-right{
+    -fx-border-width:  0 1 0 0;
+    -fx-border-color:  #c8c8c8;
+}
+
+.border-pane-left{
+    -fx-border-width:  0 0 0 1;
+    -fx-border-color:  #c8c8c8;
+}
+
+.border-pane-bottom{
+    -fx-border-width:  0 0 1 0;
+    -fx-border-color:  #c8c8c8;
+}
+
+/***********************************************************************************************************************
+  scroll
+***********************************************************************************************************************/
+
+.scroll-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-cursor : hand;
+    -fx-padding : 2;
+}
+
+/***********************************************************************************************************************
+  Circle, indicator
+***********************************************************************************************************************/
+
+.circle-violation {
+    -fx-fill : red;
+}
+
+/***********************************************************************************************************************
+  Button
+***********************************************************************************************************************/
+.device-toggle-button {
+    -fx-border-color: lightgrey;
+    -fx-background-color: transparent;
+    -fx-border-width : 0 1 0 1;
+    -fx-cursor : hand;
+}
+
+.device-toggle-button:hover {
+    -fx-background-color: lightgrey;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.device-toggle-button:selected {
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-color: #0096c9;
+}
+
+.level-toggle-button {
+    -fx-border-radius: 5;
+    -fx-border-width : 2;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-cursor : hand;
+}
+
+.level-toggle-button:hover {
+    -fx-background-color : lightgrey;
+}
+
+.level-toggle-button:selected {
+    -fx-border-color : -fx-focus-color;
+    -fx-background-color: transparent;
+}
+
+.series-toggle-button {
+    -fx-border-color: transparent;
+    -fx-background-radius: 15;
+    -fx-padding : 2 12 2 12;
+    -fx-pref-height : 21;
+    -fx-cursor : hand;
+    -fx-background-color: transparent;
+}
+
+.series-toggle-button:hover  {
+    -fx-background-color: lightgrey;
+}
+
+.series-toggle-button:selected  {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: white;
+}
+
+
+.test-add-button {
+    -fx-background-color: linear-gradient(to bottom, #fcfcfc, #f4f4f4);
+    -fx-background-insets: 1;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-border-color: #bbbbbb;
+}
+
+.test-add-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #fcfcfc);
+    -fx-cursor : hand;
+    -fx-border-color: #bbbbbb;
+}
+
+.all-test-btn{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.all-test-btn .text {
+    -fx-fill: #8a8a8a;
+    -fx-font-weight : bold;
+    -fx-font-size: 13px;
+}
+
+/***********************************************************************************************************************
+  titledList
+***********************************************************************************************************************/
+.sample-title-pane .title .arrow-button {
+    visibility : false;
+}
+
+.sample-title-pane .title{
+    -fx-background-radius: 5;
+    -fx-background-width: 2;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+    -fx-border-color: transparent;
+}
+
+.sample-title-pane:selected .title{
+    -fx-border-color: #0096c9;
+    -fx-background-color: white;
+}
+
+/***********************************************************************************************************************
+  notification
+***********************************************************************************************************************/
+.expire-notification-label {
+    -fx-border-width: 2;
+    -fx-border-color: white;
+    -fx-border-radius: 10;
+    -fx-border-insets: 0 -8 0 -8;
+    -fx-background-radius: 10;
+    -fx-background-insets: 0 -7 0 -7;
+    -fx-padding : 1;
+}
+
+.expire-notification-label .text {
+    -fx-font-weight : bold;
+    -fx-fill : white;
+}
+
+/***********************************************************************************************************************
+  list-view
+***********************************************************************************************************************/
+.card-list-view {
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+}
+
+.card-list-view .list-cell:selected {
+    -fx-border-width: 2 2 2 2;
+    -fx-padding: 2 7 2 7;
+    -fx-border-color: #0096c9;
+    -fx-background-color: white;
+    -fx-font-weight: bold;
+}
+
+.card-list-view .list-cell .text {
+    -fx-fill : black;
+}
+
+.test-list-view .list-cell:empty {
+    -fx-background-color: #F4F4F4;
+}
+
+/***********************************************************************************************************************
+  table-view
+***********************************************************************************************************************/
+.result-table-view .table-row-cell:selected {
+    -fx-table-cell-border-color: #ededed;
+    -fx-border-color: #0096c9;
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+    -fx-border-width: 2;
+    -fx-padding: -2 -3 2 0;
+}
+
+.result-table-view .table-row-cell:selected .text {
+    -fx-fill: black;
+}
+
+.result-table-view .table-row-cell:exclude .text {
+    -fx-fill: #999999;
+    -fx-strikethrough: true;
+}
+
+.result-table-view .table-row-cell:prototype {
+    -fx-background-color: #e3e3e3;
+}
+/***********************************************************************************************************************
+  charts
+***********************************************************************************************************************/
+.chart-plot-background {
+/*
+    -fx-background-color: #ffd1d1;
+*/
+}
+
+/**граница серии**/
+.chart-series-line:limit {
+    -fx-stroke: #878787;
+    -fx-stroke-width: 2px;
+    -fx-stroke-dash-array: 4 4;
+}
+
+/**медиана**/
+.chart-series-line:mean {
+    -fx-stroke: #a3a3a3;
+    -fx-stroke-width: 2px;
+}
+
+/**график результатов**/
+.chart-series-line:main {
+    -fx-stroke: #707070;
+}
+
+/**исключённые точки**/
+.chart-series-line:exclude {
+    -fx-stroke: transparent;
+}
+
+/**сигмы**/
+.chart-series-line:level1 {
+    -fx-stroke: #ffa317;
+    -fx-stroke-width: 2px;
+    -fx-opacity: 0.7;
+}
+
+.chart-series-line:level2 {
+    -fx-stroke: #d93e4b;
+    -fx-stroke-width: 2px;
+    -fx-opacity: 0.7;
+}
+
+.chart-series-line:level3 {
+    -fx-stroke: #992c52;
+    -fx-stroke-width: 2px;
+    -fx-opacity: 0.7;
+}
+
+/**вершины графика**/
+
+.chart-line-symbol {
+    -fx-background-color: transparent;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-border-insets: -2;
+    -fx-shape: "";
+}
+
+.chart-line-symbol:level1 {
+    -fx-background-color: -fx-color-level-1;
+}
+
+.chart-line-symbol:level2 {
+    -fx-background-color: -fx-color-level-2;
+}
+
+.chart-line-symbol:level3 {
+    -fx-background-color: -fx-color-level-3;
+}
+
+.chart-line-symbol:exclude{
+    -fx-background-image: url('../images/qc/excluded_mark.png');
+}
+
+/**оси**/
+.axis-text-level-1 {
+    -fx-fill: -fx-color-level-1;
+    -fx-font-weight : bold;
+    -fx-font-size: 10px;
+}
+
+.axis-text-level-2 {
+    -fx-fill: -fx-color-level-2;
+    -fx-font-weight : bold;
+    -fx-font-size: 10px;
+}
+
+.axis-text-level-3 {
+    -fx-fill: -fx-color-level-3;
+    -fx-font-weight : bold;
+    -fx-font-size: 10px;
+}
+
+/**цвета ошибок**/
+* {
+    -fx-color-level-1: #ffa317;
+    -fx-color-level-2: #d93e4b;
+    -fx-color-level-3: #992c52;
+}
+
+/***********************************************************************************************************************
+  hint
+***********************************************************************************************************************/
+.result-popover {
+    -fx-padding: 8 0 8 0;
+    -fx-background-color: white;
+}
+
+.result-popover > .border {
+	-fx-stroke: rgba(0, 0, 0, .4);
+	-fx-stroke-width: 1px;
+	-fx-fill: rgba(255.0,255.0,255.0, .95);
+}
+
+/***********************************************************************************************************************
+  text field
+***********************************************************************************************************************/
+.characteristic-text-field:disabled {
+    -fx-opacity: 0.7;
+}
+
+/***********************************************************************************************************************
+  combo box
+***********************************************************************************************************************/
+.filter-result-combo-box{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-pref-height : 15;
+    -fx-border-width: 0;
+}
+
+.filter-result-combo-box .combo-box-popup .list-view .list-cell{
+    -fx-padding: 4 25 4 2;
+    -fx-pref-width : 10;
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.new-specimen-label {
+    -fx-alignment : center;
+    -fx-font-size : 14;
+    -fx-text-fill: grey;
+    -fx-font-weight: bold;
+}

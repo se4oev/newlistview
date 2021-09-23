@@ -1,0 +1,16 @@
+.tat-sample-cell .progress-pane .text {
+    -fx-font-weight : bold;
+    -fx-fill : white;
+}
+
+.progress-bar:warn .bar {
+    -fx-background-color : orange;
+}
+
+.progress-bar:expire .bar {
+    -fx-background-color : red;
+}
+
+.table-view .column-header .text {
+    -fx-text-alignment : center;
+}

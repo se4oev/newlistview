@@ -1,0 +1,57 @@
+.table-view, .table-view: focused{
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+}
+
+.cross:hover .text {
+    -fx-fill : black;
+}
+
+.cross .text {
+    -fx-font-size : 16;
+    -fx-font-weight : bold;
+    -fx-fill : grey;
+    -fx-cursor : hand;
+}
+
+.header-grid .text {
+    -fx-font-size : 14;
+    -fx-font-weight : bold;
+}
+
+.data-container {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: transparent;
+    -fx-spacing : 5;
+    -fx-padding: 5px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+    -fx-background-color: #f4f4f4;
+}
+
+.round-button {
+    -fx-background-radius: 5em;
+    -fx-border-radius: 5em;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: lightgrey;
+    -fx-background-color: #f4f4f4;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-width: 30px;
+    -fx-max-height: 30px;
+}
+
+.dashed-pane {
+    -fx-border-color: lightgrey;
+    -fx-border-width: 2;
+    -fx-border-style: segments(12, 15, 15, 15)  line-cap round ;
+}
+
+/* Для чекбокса и таблицы нунжо переопределить размер,
+иначе чекбокс в ячейке не будет выравниваться по центру */
+.check-box,
+.table-view {
+    -fx-font-size : 12;
+}

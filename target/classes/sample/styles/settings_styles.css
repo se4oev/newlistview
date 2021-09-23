@@ -1,0 +1,90 @@
+.settings-tab-pane .tab-header-area {
+    -fx-padding : 5 5 0 5;
+}
+
+.settings-tab-pane .tab-header-background {
+    -fx-background-color : derive(grey, 90%);
+
+}
+
+.settings-tab-pane .tab {
+    -fx-padding: 5 20 5 20;
+}
+
+.settings-tab-pane .tab:selected {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.settings-tab-pane .tab:disabled {
+    -fx-background-color : transparent;
+    -fx-border-width: 0;
+}
+
+.settings-menu-header {
+    -fx-background-color : transparent;
+    -fx-pref-height : 32;
+}
+
+.settings-menu-header .text {
+    -fx-font-weight : bold;
+    -fx-fill : grey;
+}
+
+.check-box-label * {
+    -fx-cursor : hand;
+}
+
+.check-box-label {
+    -fx-font-family : "Ubuntu";
+    -fx-font-size : 16;
+    -fx-fill : black;
+    -fx-pref-height: 32;
+    -fx-padding: 5;
+    -fx-alignment: center;
+}
+
+.print-preview-label {
+    -fx-font-family : "Ubuntu";
+    -fx-font-size : 16;
+    -fx-fill : black;
+    -fx-pref-height: 32;
+    -fx-padding: 5;
+    -fx-alignment: center;
+}
+
+/* убираем выпадающее меню в tabPane */
+.tab-down-button {
+    -fx-padding: 0;
+}
+
+.tab-down-button .arrow {
+    -fx-padding: 0;
+}
+
+.settings-menu-button .arrow-button {
+    visibility : false;
+    -fx-pref-width : 0;
+}
+
+.settings-menu-button:unfocused {
+    -fx-background-color: red;
+}
+
+.settings-menu-button:hover {
+    -fx-background-color: white;
+}
+
+.settings-menu-button:selected {
+    -fx-background-color : derive(grey, 90%);
+}
+
+.settings-menu-button {
+    -fx-background-color : transparent;
+    -fx-pref-height : 32;
+}
+
+.settings-menu-button .text {
+    -fx-font-weight : bold;
+    -fx-fill : grey;
+}

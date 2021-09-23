@@ -1,0 +1,467 @@
+#btnDown, #btnRight {
+    -fx-pref-height : 20;
+    -fx-padding : 7;
+}
+
+#btnDown .image-view {
+    -fx-image : url('../images/arrows/grey_down.png');
+}
+
+#btnRight .image-view {
+    -fx-image : url('../images/arrows/grey_right.png');
+}
+
+#btnDown:selected .image-view {
+    -fx-image : url('../images/arrows/blue_down.png');
+}
+
+#btnRight:selected .image-view {
+    -fx-image : url('../images/arrows/blue_right.png');
+}
+
+/***********************************************************************************************************************
+  Рамки рутовой панели
+***********************************************************************************************************************/
+.ifa-root-pane .filters-footer, .nlab-list  {
+    -fx-border-width: 0 1 0 1;
+    -fx-border-color: lightgrey;
+}
+
+.ifa-root-pane .filters-box {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: lightgrey;
+}
+
+/***********************************************************************************************************************
+  Лейблы
+***********************************************************************************************************************/
+
+/* sample label */
+.show-sample-label {
+    -fx-alignment : center;
+    -fx-font-size : 14;
+    -fx-text-fill: grey;
+    -fx-font-weight: bold;
+}
+
+/* timer label */
+.timer-label .text {
+    -fx-font-size : 40;
+    -fx-fill : grey;
+    -fx-font-weight : bold;
+}
+
+/***********************************************************************************************************************
+ Лейблы фильтра в подвале
+***********************************************************************************************************************/
+.filter-label .label {
+    -fx-alignment : center;
+    -fx-font-size : 14;
+}
+
+.filter-label .text {
+    -fx-fill : white;
+    -fx-font-weight : bold;
+}
+
+.filter-label-cross {
+    -fx-cursor : hand;
+}
+
+.filter-label-cross Line {
+    -fx-stroke-width : 2;
+    -fx-stroke : #f4f4f4;
+}
+
+.filter-label-polygon {
+    -fx-opacity : 1;
+    -fx-fill : -fx-focus-color;
+    -fx-stroke : -fx-focus-color;
+    -fx-stroke-width : 5;
+    -fx-stroke-line-cap : round;
+    -fx-stroke-line-join : round;
+}
+
+.filter-label Polygon, .head-label Polygon, .not-active-head-label Polygon {
+    -fx-opacity : 1;
+    -fx-fill : -fx-focus-color;
+    -fx-stroke : -fx-focus-color;
+    -fx-stroke-width : 5;
+    -fx-stroke-line-cap : round;
+    -fx-stroke-line-join : round;
+}
+
+.filter-label-tooltip .text {
+    -fx-fill: black;
+}
+
+/***********************************************************************************************************************
+ Панель мастера
+***********************************************************************************************************************/
+.top-label .text {
+    -fx-fill : black;
+    -fx-font-weight : bold;
+}
+
+.head-label .label {
+    -fx-alignment : center;
+    -fx-font-size : 22;
+}
+
+.head-label .text {
+    -fx-fill : white;
+    -fx-font-weight : bold;
+}
+
+.not-active-head-label .label {
+    -fx-alignment : center;
+    -fx-font-size : 22;
+}
+
+.not-active-head-label .text {
+    -fx-fill : #bfbfbf;
+    -fx-font-weight : bold;
+}
+
+.not-active-head-label Polygon {
+    -fx-fill : transparent;
+    -fx-stroke : transparent;
+}
+
+/***********************************************************************************************************************
+ Панель фильтров
+***********************************************************************************************************************/
+#btnApply {
+    -fx-background-color : -fx-focus-color;
+    -fx-text-fill : white;
+    -fx-cursor : hand;
+}
+
+#btnSave,
+#btnClear {
+    -fx-background-color : derive(grey, 80%);
+    -fx-background-radius : 3;
+    -fx-cursor : hand;
+}
+
+#btnSave:hover,
+#btnClear:hover {
+    -fx-background-color : derive(grey, 90%);
+}
+
+#btnApply:hover {
+    -fx-background-color : derive(-fx-focus-color, 10%);
+}
+
+.filter-date-picker{
+    -fx-pref-height : 20;
+}
+
+.filter-label .text-field:disabled {
+    -fx-opacity: 1.0;
+}
+
+.filter-label .text-field {
+    -fx-min-width : 50;
+    -fx-pref-width : 50;
+    -fx-min-height : 20;
+    -fx-pref-height : 24;
+    -fx-background-color : transparent;
+    -fx-alignment : center;
+    -fx-font-size : 14;
+    -fx-text-fill : white;
+    -fx-font-weight : bold;
+    -fx-focus-traversable : false;
+    -fx-translate-y : -2;
+    -fx-highlight-fill : blue;
+}
+
+/***********************************************************************************************************************
+ Transparent button
+***********************************************************************************************************************/
+.label-button {
+    -fx-background-color: transparent;
+    -fx-cursor : hand;
+    -fx-border-color: transparent transparent transparent transparent;
+    -fx-border-insets: 0, 0 0 0 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 -1 0;
+    -fx-underline: true;
+    -fx-text-fill: #029dd3;
+}
+
+.label-button .text, .start-ifa-combo-box .list-cell .text {
+    -fx-font-size: 16;
+}
+
+.header-menu-button:openverticaly .arrow-button{
+    visibility: false;
+}
+
+/***********************************************************************************************************************
+  Табы
+***********************************************************************************************************************/
+.tab-pane .tab-header-area * {
+    -fx-background-color : transparent;
+    -fx-border-color : transparent;
+}
+
+.tab-pane .tab {
+    -fx-background-radius : 15;
+    -fx-padding : 2 12 2 12;
+    -fx-pref-height : 23;
+    -fx-cursor : hand;
+}
+
+.tab-pane .tab .text {
+    -fx-translate-y : -2;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color : lightgrey;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color : -fx-focus-color;
+}
+
+.tab-pane .tab:selected .text {
+    -fx-fill : white;
+}
+
+.tab-pane .tab .text {
+    -fx-fill : #252525;
+}
+
+/***********************************************************************************************************************
+  Комбобоксы
+***********************************************************************************************************************/
+.combo-box-popup .list-view{
+    -fx-background-color: white, white;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+    -fx-cursor: hand;
+}
+
+.combo-box-popup .list-view .list-cell{
+    -fx-padding: 4 0 4 5;
+    -fx-background-color: white;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover{
+    -fx-background: -fx-accent;
+    -fx-background-color: -fx-selection-bar;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover{
+    -fx-background-color: lightgrey;
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.start-ifa-combo-box{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-pref-height : 20;
+    -fx-border-width: 0;
+}
+
+.start-ifa-combo-box .combo-box {
+    -fx-pref-width: 300;
+}
+
+.start-ifa-combo-box .combo-box-popup > .list-view {
+    -fx-pref-width: 300;
+}
+
+.start-ifa-combo-box .list-cell{
+    -fx-text-fill: grey;
+    -fx-font-weight: bold;
+}
+
+.start-ifa-combo-box .list-cell:filled {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.start-ifa-combo-box .arrow, .start-ifa-combo-box .arrow-button{
+    -fx-background-color: transparent;
+}
+
+/***********************************************************************************************************************
+  Матрица
+***********************************************************************************************************************/
+.table-matrix, .table-matrix:focused{
+    -fx-border-color: lightgrey lightgrey lightgrey lightgrey;
+    -fx-box-border: lightgrey lightgrey lightgrey lightgrey;
+    -fx-background-insets: 0, 0;
+    -fx-padding: 0;
+}
+
+.table-matrix .cell:dragged {
+    -fx-border-color: #029dd3;
+    -fx-border-width: 2 2 2 2;
+}
+
+.table-matrix .cell:selected {
+    -fx-border-color: #029dd3 #029dd3 #029dd3 #029dd3;
+    -fx-border-width: 2 2 2 2;
+    -fx-background-color: transparent transparent transparent transparent;
+}
+
+.table-matrix .cell:selected .text{
+        -fx-fill: black;
+}
+
+.cell {
+    -fx-alignment: CENTER;
+    -fx-padding: 0 0 0 0;
+}
+
+.zero-cell {
+    -fx-background-color : lightgrey;
+    -fx-border-width : 0;
+}
+
+.left-header {
+    -fx-background-color : lightgrey;
+    -fx-border-width : 1 0 0 0;
+    -fx-border-color : white;
+    -fx-background-insets : 0 1 0 0;
+}
+
+.top-header {
+    -fx-background-color : lightgrey;
+    -fx-border-width : 0 0 0 1;
+    -fx-border-color : white;
+    -fx-background-insets : 0 0 1 0;
+}
+
+/***********************************************************************************************************************
+  Ячейки матриц (постановка, данные, результаты)
+***********************************************************************************************************************/
+.sample-cell,
+.result-cell,
+.control-cell {
+    -fx-background-insets : 1;
+}
+
+.result-cell, .sample-cell, .result-control-cell, .result-c-control-cell {
+    -fx-border-width: 2 2 2 2;
+}
+
+.sample-cell: selected .ids-label {
+    -fx-background-color: grey;
+    -fx-alignment: center;
+}
+.sample-cell: selected .ids-label .text {
+    -fx-fill: white;
+}
+
+.result-cell: selected .ids-label {
+    -fx-background-color: grey;
+    -fx-alignment: center;
+}
+.result-cell: selected .ids-label .text {
+    -fx-fill: white;
+}
+
+.result-control-cell:selected .result-control_label {
+    -fx-padding: 2 2 2 2;
+}
+
+.result-c-control-cell:selected .result-c-control_label {
+    -fx-padding: 2 2 2 2;
+}
+
+.result-control-cell:selected .result-control_label .text {
+    -fx-fill: #029dd3;
+}
+
+.result-control_label .text {
+    -fx-font-size: 20;
+    -fx-fill: #029dd3;
+    -fx-font-weight: bold;
+}
+
+.result-c-control-cell:selected .result-c-control_label .text {
+    -fx-fill: grey;
+}
+
+.result-c-control_label .text {
+    -fx-font-size: 20;
+    -fx-fill: grey;
+    -fx-font-weight: bold;
+}
+
+.c-control-cell:selected .c-control_label .text {
+    -fx-fill: grey;
+}
+
+.c-control_label .text {
+    -fx-font-size: 28;
+    -fx-fill: grey;
+    -fx-font-weight: bold;
+}
+
+.control-cell:selected .control_label .text {
+    -fx-fill: #029dd3;
+}
+
+.control_label .text {
+    -fx-font-size: 28;
+    -fx-fill: #029dd3;
+    -fx-font-weight: bold;
+}
+
+.header_label {
+    -fx-font-weight: bold;
+}
+
+.matrix-result-cell, .ids-label {
+    -fx-alignment: CENTER;
+}
+
+.ids-label .text {
+    -fx-font-weight: bold;
+}
+
+/***********************************************************************************************************************
+  Списки заданий и материалов
+***********************************************************************************************************************/
+.lab-sample-row {
+    -fx-min-width : 148;
+    -fx-pref-width : 168;
+}
+
+.lab-method-row {
+    -fx-min-width : 182;
+    -fx-pref-width : 182;
+    -fx-pref-height: 88;
+}
+
+.patient_label {
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-max-width:Infinity;
+}
+
+.patient_label .text {
+    -fx-font-size: 12;
+}
+
+#idsLabel {
+    -fx-alignment: CENTER;
+    -fx-font-size: 11;
+    -fx-font-weight: bold;
+}
+
+/***********************************************************************************************************************
+  Прогресс индикатор
+***********************************************************************************************************************/
+.status-progress-indicator .percentage {
+   visibility: hidden;
+   -fx-fill: null;
+}

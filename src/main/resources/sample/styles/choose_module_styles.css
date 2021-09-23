@@ -1,0 +1,27 @@
+#rootPane {
+    -fx-background-color : transparent;
+}
+
+#iconsContainer {
+    -fx-background-radius : 10;
+    -fx-padding : 0 5 5 5;
+    -fx-background-color : gainsboro;
+}
+
+.label {
+    -fx-text-fill : derive(black, 60%);
+    -fx-font-weight : bold;
+}
+
+.module-button {
+    -fx-pref-width : 120;
+    -fx-alignment : center;
+    -fx-cursor : hand;
+}
+.module-button:noanimation .image-view {
+    -fx-image : url('../images/module.png');
+}
+
+.module-button:noanimation:hover .image-view {
+    -fx-image : url('../images/module_big.png');
+}

@@ -1,0 +1,511 @@
+/***********************************************************************************************************************
+  Standard buttons
+***********************************************************************************************************************/
+
+/* for all standard buttons*/
+.template-button {
+    -fx-background-color : transparent;
+    -fx-cursor : hand;
+    -fx-padding : 0;
+    -fx-pref-width : 30;
+    -fx-pref-height : -fx-pref-width;
+}
+
+/* button images */
+.template-button {
+    -fx-background-image : url('../images/buttons/template.png');
+    -fx-background-repeat : no-repeat;
+    -fx-background-position : center;
+}
+
+/***********************************************************************************************************************
+  TextField template button
+***********************************************************************************************************************/
+
+.buttoned-text-field .content,
+.buttoned-text-field .text-field .content,
+.buttoned-text-field .text-area .content {
+    -fx-padding : 4 25 4 9;
+    -fx-background-color : white;
+}
+
+.buttoned-text-field .button {
+    -fx-background-color : transparent;
+    -fx-cursor : hand;
+    -fx-padding : 0;
+    -fx-pref-width : 30;
+    -fx-pref-height : -fx-pref-width;
+}
+
+/***********************************************************************************************************************
+  Lab Dep chooser
+***********************************************************************************************************************/
+
+.header-menu-button .arrow-button {
+    visibility : false;
+    -fx-pref-width : 0;
+}
+
+.header-menu-button {
+    -fx-background-color : transparent;
+    -fx-pref-height : 32;
+}
+
+.header-menu-button * {
+    -fx-cursor : hand;
+}
+
+.header-menu-button .text {
+    -fx-font-weight : bold;
+    -fx-fill : grey;
+}
+
+/***********************************************************************************************************************
+  Toggle chooser
+***********************************************************************************************************************/
+
+.toggle-chooser {
+    -fx-spacing : 5;
+}
+
+.toggle-chooser .toggle-button {
+    -fx-padding : 2;
+    -fx-background-color : transparent;
+    -fx-border-width : 2;
+    -fx-border-color : transparent;
+    -fx-background-radius : 2;
+    -fx-border-radius : 2;
+    -fx-cursor : hand;
+}
+
+.toggle-chooser .toggle-button:hover {
+    -fx-background-color : lightgrey;
+}
+
+.toggle-chooser .toggle-button:selected {
+    -fx-border-color : -fx-focus-color;
+}
+
+/***********************************************************************************************************************
+  Popup field
+***********************************************************************************************************************/
+
+.popup-field .text-field {
+    -fx-padding : 5 25 5 9;
+}
+
+.popup-field .arrow-button {
+    -fx-focus-traversable : false;
+}
+
+.popup-field .arrow-button .image-view {
+    -fx-image : url('../images/arrow1_down.png');
+    -fx-cursor : hand;
+}
+
+/* Item with page buttons */
+
+.page-menu-item {
+    -fx-background-color : white;
+    -fx-background-insets : 0 1 1 1;
+}
+
+.page-menu-item:focused .text,
+.page-menu-item .text {
+    -fx-fill : grey;
+}
+
+.page-menu-item .label:hover {
+    -fx-cursor : hand;
+}
+
+.page-menu-item .label:hover .text {
+    -fx-fill : black;
+}
+
+/***********************************************************************************************************************
+***********************************************************************************************************************/
+
+.range-slider {
+    -fx-padding : 0 5 0 2;
+}
+
+/***********************************************************************************************************************
+  ResultTitledListView
+***********************************************************************************************************************/
+
+.result-cell #unitsLabel,
+.result-cell #normLabel {
+    -fx-padding : 5 0 0 0;
+}
+
+.result-cell #validationImage {
+    -fx-cursor : hand;
+}
+
+.result-cell .text-area .content,
+.result-cell .text-area .viewport,
+.result-cell:locked .text-area,
+.result-cell:locked .text-area:unfocused {
+    -fx-background-color : transparent;
+}
+
+.result-cell:locked .text-area .content {
+    -fx-cursor : default;
+}
+
+.result-cell .text-area:unfocused {
+    -fx-background-color : #f4f4f4;
+}
+
+.result-cell AnchorPane {
+    -fx-padding : 5 5 5 0;
+}
+
+.result-cell #titleLabel {
+    -fx-font-weight : bold;
+    -fx-padding : 0 0 0 10;
+}
+
+.result-cell:suppressed #titleLabel .text {
+    -fx-strikethrough : true;
+    -fx-font-weight : normal;
+}
+
+
+.result-titled-list-view .titled-pane,
+.result-titled-list-view .titled-pane .content {
+    -fx-background-color : transparent;
+}
+
+.result-titled-list-view .titled-pane .title {
+    -fx-pref-height : 50;
+    -fx-background-color : papayawhip;
+    -fx-alignment : center;
+    -fx-border-width : 1 0 0 0;
+    -fx-border-color : derive(papayawhip, -5%);
+}
+
+.result-titled-list-view .titled-pane .title .text {
+    -fx-translate-y : -15;
+    -fx-font-weight : bold;
+}
+
+.result-titled-list-view > .scroll-pane,
+.result-titled-list-view {
+    -fx-background-color : transparent;
+    -fx-border-width : 0;
+    -fx-padding : 0;
+}
+
+/***********************************************************************************************************************
+  Tab pane with right aligned tabs
+***********************************************************************************************************************/
+
+.right-tab-pane .tab-header-area {
+    -fx-padding : 0 0 0 0;
+}
+
+.right-tab-pane .tab-header-background {
+    -fx-background-color : transparent;
+}
+
+.right-tab-pane .tab {
+    -fx-focus-color : transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-padding : 3 10 3 10;
+    -fx-background-color : transparent;
+    -fx-background-radius : 0;
+    -fx-border-radius : 0;
+    -fx-border-width : 2;
+    -fx-border-color : transparent;
+}
+
+/* background selector */
+.right-tab-pane .tab:hover {
+    -fx-background-color : derive(grey, 90%);
+}
+
+.right-tab-pane .tab:selected {
+    -fx-background-color : lightgrey;
+}
+
+.right-tab-pane .tab:disabled {
+    -fx-background-color : transparent;
+}
+
+
+/* border selector */
+/*
+.right-tab-pane .tab:hover {
+    -fx-border-width : 2;
+    -fx-border-color : lightgrey;
+    -fx-background-color : lightgrey;
+}
+
+.right-tab-pane .tab:selected {
+    -fx-border-width : 2;
+    -fx-border-color : #039ED3 transparent transparent transparent;
+    -fx-background-color : transparent;
+}
+*/
+
+/***********************************************************************************************************************
+  Progress indicator
+***********************************************************************************************************************/
+
+.nlab-progress Circle {
+    -fx-stroke : transparent;
+    -fx-fill : -fx-focus-color;
+}
+
+/***********************************************************************************************************************
+  Filters
+***********************************************************************************************************************/
+
+/* Filter labels */
+.filter-label .label {
+    -fx-alignment : center;
+    -fx-font-size : 14;
+}
+
+.filter-label .text {
+    -fx-fill : white;
+    -fx-font-weight : bold;
+}
+
+.filter-label-cross {
+    -fx-cursor : hand;
+}
+
+.filter-label-cross Line {
+    -fx-stroke-width : 2;
+    -fx-stroke : #f4f4f4;
+}
+
+.filter-label-polygon {
+    -fx-opacity : 1;
+    -fx-fill : -fx-focus-color;
+    -fx-stroke : -fx-focus-color;
+    -fx-stroke-width : 5;
+    -fx-stroke-line-cap : round;
+    -fx-stroke-line-join : round;
+}
+
+/* Filter preset labels */
+.filter-label .text-field:disabled {
+    -fx-opacity: 1.0;
+}
+
+.filter-pane .filter-label {
+    -fx-cursor : hand;
+}
+
+.filter-label .text-field {
+    -fx-min-width : 50;
+    -fx-pref-width : 50;
+    -fx-min-height : 20;
+    -fx-pref-height : 24;
+    -fx-background-color : transparent;
+    -fx-alignment : center;
+    -fx-font-size : 14;
+    -fx-text-fill : white;
+    -fx-font-weight : bold;
+    -fx-focus-traversable : false;
+    -fx-translate-y : -2;
+    -fx-highlight-fill : blue;
+}
+
+.filter-label-tooltip .text {
+    -fx-fill: black;
+}
+
+/* Filter pane buttons */
+.filter-pane #btnApply {
+    -fx-background-color : -fx-focus-color;
+    -fx-text-fill : white;
+    -fx-cursor : hand;
+}
+
+.filter-pane #btnSave,
+.filter-pane #btnClear,
+.filter-pane #btnCancel {
+    -fx-background-color : derive(grey, 80%);
+    -fx-background-radius : 3;
+    -fx-cursor : hand;
+}
+
+.filter-pane #btnSave:hover,
+.filter-pane #btnClear:hover,
+.filter-pane #btnCancel:hover {
+    -fx-background-color : derive(grey, 90%);
+}
+
+.filter-pane #btnApply:hover {
+    -fx-background-color : derive(-fx-focus-color, 10%);
+}
+
+.date-shortcuts .text {
+    -fx-underline: true;
+    -fx-fill : -fx-focus-color;
+    -fx-cursor : hand;
+}
+
+/***********************************************************************************************************************
+  Transparent list with underlined selection
+***********************************************************************************************************************/
+
+.hyperlink-list {
+    -fx-background-color : transparent;
+    -fx-border-width : 0;
+}
+
+.hyperlink-list .list-cell {
+    -fx-background-color : transparent;
+    -fx-border-width : 0;
+    -fx-cursor : hand;
+}
+
+.hyperlink-list .list-cell .text {
+    -fx-fill : grey;
+}
+
+.hyperlink-list .list-cell:hover .text {
+    -fx-fill : black;
+}
+
+.hyperlink-list .list-cell:selected .text {
+    -fx-fill : black;
+    -fx-underline : true;
+}
+
+/***********************************************************************************************************************
+  Transparent ComboBox with large font
+***********************************************************************************************************************/
+
+.transparent-combo-box > .list-cell:selected {
+    -fx-alignment : center-right;
+}
+
+.transparent-combo-box {
+    -fx-cursor : hand;
+    -fx-background-color : transparent;
+}
+
+/***********************************************************************************************************************
+  Serv Group List Text
+***********************************************************************************************************************/
+
+.serv-group-list-cell:selected .serv-group-list-text {
+    -fx-fill: black;
+    -fx-underline: true;
+}
+
+.serv-group-list-text {
+    -fx-cursor: hand;
+    -fx-fill : grey;
+    -fx-text-alignment: right;
+}
+
+.serv-group-list-text:hover {
+    -fx-fill: black;
+}
+
+.serv-group-list-text:selected {
+    -fx-fill : black;
+    -fx-underline : true;
+}
+
+/***********************************************************************************************************************
+  Small buttons
+***********************************************************************************************************************/
+
+.icon-minus-18 {
+    -fx-background-image : url('../images/buttons/del_small.png');
+}
+
+/***********************************************************************************************************************
+  Codeset Menu Item
+***********************************************************************************************************************/
+
+.codeset-menu-item {
+    -fx-pref-height: -1;
+}
+
+/***********************************************************************************************************************
+  Custom color chooser (ColorChooser, ColorChooserPopup)
+***********************************************************************************************************************/
+
+#colorChooser {
+    -fx-padding : 0 10 0 30;
+    -fx-cursor : hand;
+}
+
+#colorChooser #content {
+    -fx-spacing : 10;
+    -fx-alignment : center-left;
+}
+
+#colorChooser .label {
+    -fx-text-fill : derive(black, 100%);
+}
+
+#colorChooser #arrow {
+    -fx-image : url('../images/mbio/color_chooser_arrow.png');
+}
+
+#colorChooser #circle {
+    -fx-stroke : white;
+    -fx-stroke-width: 1;
+}
+
+#colorChooserGrid {
+    -fx-background-color : white;
+    -fx-padding : 15;
+    -fx-vgap : 10;
+    -fx-hgap : 10;
+    -fx-border-width : 1;
+    -fx-border-color : derive(black, 120%);
+    -fx-effect : dropshadow(gaussian, #A6A6A6, 15, 0, 0, 3);
+}
+
+#colorChooserGrid #item #circle {
+    -fx-stroke-width: 2;
+    -fx-stroke : lightgrey, transparent;
+}
+
+#colorChooserGrid #item:hover,
+#colorChooserGrid #item:selected {
+    -fx-cursor : hand;
+}
+
+#colorChooserGrid #item:hover #circle,
+#colorChooserGrid #item:selected #circle {
+    -fx-stroke : white;
+    -fx-effect : dropshadow(gaussian, #A6A6A6, 15, 0, 0, 3);
+}
+
+
+/***********************************************************************************************************************
+    Select dialog
+***********************************************************************************************************************/
+
+#SelectDialog {
+    -fx-padding : 10;
+}
+
+#SelectDialog #center {
+    -fx-padding : 10 0 10 0;
+}
+
+#SelectDialog #footer {
+    -fx-alignment : center-right;
+}
+
+#SelectDialog #footer .button {
+    -fx-pref-width : 120;
+}
+
+/***********************************************************************************************************************
+***********************************************************************************************************************/
+

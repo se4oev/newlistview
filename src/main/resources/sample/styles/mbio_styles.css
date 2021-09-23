@@ -1,0 +1,321 @@
+/* TODO: фон #f4f4f4 везде внутри TitledPane */
+.titled-view .titled-pane {
+    -fx-border-width : 2;
+    -fx-border-color : transparent;
+}
+
+.titled-view .titled-pane:selected {
+    -fx-border-color : -fx-focus-color;
+}
+
+.titled-view .titled-pane .title {
+    -fx-padding : 0 0 0 10;
+    -fx-cursor : default;
+}
+
+.titled-view .titled-pane .title .graphic {
+    -fx-padding : 10;
+}
+
+.cell-cross {
+    -fx-cursor : hand;
+}
+
+.cell-cross: hover .cross .text {
+    -fx-cursor : hand;
+    -fx-fill : black;
+}
+
+.cell-cross: selected, .cell-cross:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.cross:hover .text {
+    -fx-fill : black;
+}
+
+.cross .text {
+    -fx-font-size : 16;
+    -fx-font-weight : bold;
+    -fx-fill : grey;
+    -fx-cursor : hand;
+}
+
+.titled-view .titled-pane .title .graphic .cross {
+    -fx-pref-width : 20;
+    -fx-pref-height : -fx-pref-width;
+    -fx-alignment : center-right;
+}
+
+.titled-view .container-image {
+    -fx-padding : 0 10 0 0;
+}
+
+
+.mbio-service-label {
+    -fx-padding: 0 0 0 3;
+}
+
+.bacteria-field {
+    -fx-padding : 2;
+}
+
+.bacteria-field:locked {
+    -fx-background-color : transparent;
+    -fx-font-weight : bold;
+    -fx-cursor : default;
+}
+
+
+/* TODO: выравнивание SIR по центру */
+.antibiotic-table .column-header .filler,
+.antibiotic-table .column-header-background .filler,
+.antibiotic-table .column-header,
+.antibiotic-table .column-header-background {
+    -fx-background-color : derive(grey, 100%);
+}
+
+.edit-cell {
+    -fx-padding : 1;
+}
+
+.edit-cell .text-field {
+    -fx-pref-height : 24;
+    -fx-max-height : -fx-pref-height;
+    -fx-min-height : -fx-pref-height;
+}
+
+.edit-cell:focused .text-field {
+    -fx-text-fill : white;
+}
+
+.edit-cell:unfocused .text-field {
+    -fx-background-color : transparent;
+}
+
+/* TODO: вынести в общие стили? */
+* :disabled {
+    -fx-opacity: 1;
+}
+
+
+
+
+/* Редактор сред */
+
+#SubstratumList #addButton {
+    -fx-background-color : derive(black, 145%);
+    -fx-background-radius : 5;
+    -fx-cursor : hand;
+    -fx-graphic-text-gap : 7;
+}
+
+#SubstratumList #addButton:hover {
+    -fx-background-color : derive(black, 135%);
+}
+
+#SubstratumList #addButton .image-view {
+    -fx-image: url('../images/mbio/add_button.png');
+}
+
+#SubstratumListItem {
+    -fx-padding : 0 0 25 0;
+}
+
+#SubstratumListItem > VBox {
+    -fx-spacing : 7;
+}
+
+#SubstratumListItem #content {
+    -fx-padding : 0 10 0 10;
+}
+
+#SubstratumListItem #title {
+    -fx-pref-height : 35;
+    -fx-effect : dropshadow(gaussian, #BFBFBF, 15, 0, 0, 3);
+    -fx-padding : 5 12 5 12;
+    -fx-background-radius : 5;
+    -fx-border-radius : 5;
+    -fx-background-color : derive(black, 145%);
+    -fx-border-width : 1;
+    -fx-border-color : derive(black, 120%);
+}
+
+#SubstratumListItem #title #cross {
+    -fx-cursor : hand;
+}
+
+#SubstratumListItem #title #cross .image-view {
+    -fx-image : url('../images/mbio/cross_small.png');
+}
+
+#SubstratumListItem #title .label {
+    -fx-alignment : center;
+}
+
+
+#noteButton {
+    -fx-cursor : hand;
+}
+
+#noteButton .image-view {
+    -fx-image : url('../images/mbio/note_balloon.png');
+}
+
+#noteButton:noted .image-view {
+    -fx-image : url('../images/mbio/note_balloon_info.png');
+}
+
+
+#notePopup {
+    -fx-effect : dropshadow(gaussian, #A6A6A6, 15, 0, 0, 3);
+}
+
+#notePopup {
+    -fx-background-color : white;
+    -fx-background-radius : 5;
+    -fx-border-radius : 5;
+    -fx-border-width : 1;
+    -fx-border-color : -fx-focus-color;
+}
+
+#notePopup .text-area,
+#notePopup .text-area * {
+    -fx-border-color : transparent;
+    -fx-background-color : transparent;
+}
+
+
+/* Редактор тест систем */
+
+#TestSystemList {
+    -fx-padding : 5;
+}
+
+#TestSystemList > #content {
+    -fx-spacing : 20;
+    -fx-alignment : top-center;
+}
+
+#TestSystemList #itemBox {
+    -fx-spacing : 30;
+}
+
+#TestSystemList #addButton {
+    -fx-graphic-text-gap : 7;
+}
+
+#TestSystemList #addButton .image-view {
+    -fx-image: url('../images/plus_blue.png');
+}
+
+#TestSystemItem #testSystemTitle {
+    -fx-background-color : derive(grey, 95%);
+    -fx-padding : 5;
+}
+
+#TestSystemItem #testSystemTitle .text {
+    -fx-text-alignment : center;
+    -fx-font-weight : bold;
+    -fx-font-size : 16;
+}
+
+#TestSystemItem #testSystemTitle {
+    -fx-alignment : center-right;
+}
+
+#TestSystemItem #testSystemTitle #cross {
+    -fx-cursor : hand;
+    -fx-max-width : 20;
+    -fx-max-height : 20;
+}
+
+#TestSystemItem #testSystemTitle #cross .image-view {
+    -fx-image : url('../images/mbio/cross_small.png');
+}
+
+
+#TestSystemItem #matchesGrid {
+    -fx-hgap : 0;
+    -fx-vgap : 10;
+    -fx-padding : 0 5 5 0;
+}
+
+#TestSystemItem #matchesGrid #percent {
+    -fx-min-width : 50;
+    -fx-alignment : center;
+}
+
+#TestSystemItem #matchesGrid #bacteria {
+    -fx-cursor : hand;
+}
+#TestSystemItem #matchesGrid #bacteria .text {
+    -fx-underline : true;
+}
+
+
+#testSystemGrid {
+/*
+    -fx-grid-lines-visible : true;
+*/
+    -fx-vgap : 15;
+    -fx-hgap : 0;
+    -fx-padding : 15 0 0 0;
+}
+
+#testSystemGrid #gridHeader {
+    -fx-text-fill : #909090;
+    -fx-font-weight : bold;
+    -fx-padding : 0 15 0 15;
+}
+
+
+#TestSystemGridCell {
+    -fx-border-color : transparent;
+    -fx-cursor : hand;
+}
+
+#TestSystemGridCell > #content {
+    -fx-alignment : center;
+    -fx-spacing : 2;
+}
+
+#TestSystemGridCell #cellTitle {
+    -fx-background-color : lightgrey;
+    -fx-padding : 3;
+}
+
+#TestSystemGridCell #cellValue {
+    -fx-background-color : derive(grey, 90%);
+    -fx-padding : 3;
+    -fx-background-radius : 6;
+}
+
+#TestSystemGridCell:selected {
+    -fx-border-color : lightgrey;
+}
+
+#TestSystemGridCell:selected #cellTitle {
+    -fx-background-color : derive(grey, 90%);
+}
+
+#TestSystemGridCell:selected #cellValue {
+    -fx-background-color : #f4f4f4;
+}
+
+
+#TestSystemGridMenu #value {
+    -fx-pref-width : 50;
+    -fx-alignment : center;
+}
+
+#TestSystemItem #cutLabel {
+    -fx-padding : 5 0 0 50;
+}
+
+#TestSystemItem #cutLabel .text {
+    -fx-fill : -fx-focus-color;
+    -fx-cursor : hand;
+    -fx-underline : true;
+}
