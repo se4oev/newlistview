@@ -1,6 +1,8 @@
 package sample;
 
 import sample.common.ResultTemplate;
+import sample.entity.ResultType;
+import sample.entity.TestITestResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ public class TestResultLoader {
 
     private static int counter = 1;
 
-    public TestResult getTestResult() {
+    public TestITestResult getTestResult() {
         int random = (int) (Math.random() * 5);
         if (random == 0) return getNumResult();
         if (random == 1) return getTextResult();
@@ -19,16 +21,16 @@ public class TestResultLoader {
         return null;
     }
 
-    private TestResult getTestGroup() {
-        TestResult testResult = new TestResult();
+    private TestITestResult getTestGroup() {
+        TestITestResult testResult = new TestITestResult();
         testResult.setResultType(ResultType.TEST_GROUP);
         testResult.setId((long) counter++);
         testResult.setText("Группа результатов");
         return testResult;
     }
 
-    private TestResult getNumResult() {
-        TestResult testResult = new TestResult();
+    private TestITestResult getNumResult() {
+        TestITestResult testResult = new TestITestResult();
         testResult.setId((long) counter++);
         testResult.setValue("12.5");
         testResult.setNote("fdsfds");
@@ -45,8 +47,8 @@ public class TestResultLoader {
         return testResult;
     }
 
-    private TestResult getTextResult() {
-        TestResult testResult = new TestResult();
+    private TestITestResult getTextResult() {
+        TestITestResult testResult = new TestITestResult();
         testResult.setId((long) counter++);
         testResult.setValue("жидкий");
         testResult.setNote("fdsfds");
@@ -63,8 +65,8 @@ public class TestResultLoader {
         return testResult;
     }
 
-    private TestResult getFixListResult() {
-        TestResult testResult = new TestResult();
+    private TestITestResult getFixListResult() {
+        TestITestResult testResult = new TestITestResult();
         testResult.setId((long) counter++);
         testResult.setValue("три пять");
         testResult.setNote("fdsfds");
@@ -81,8 +83,8 @@ public class TestResultLoader {
         return testResult;
     }
 
-    private TestResult getListResult() {
-        TestResult testResult = new TestResult();
+    private TestITestResult getListResult() {
+        TestITestResult testResult = new TestITestResult();
         testResult.setId((long) counter++);
         testResult.setValue("пять два");
         testResult.setNote("fdsfds");

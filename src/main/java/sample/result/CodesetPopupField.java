@@ -1,18 +1,15 @@
 package sample.result;
 
-import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.*;
-import sample.TestResult;
+import sample.entity.TestITestResult;
 import sample.common.ResultTemplate;
 
 import java.util.ArrayList;
@@ -43,10 +40,10 @@ public class CodesetPopupField {
     private ContextMenu menu;
     private FilteredList<MenuItem> filteredItems = new FilteredList<>(FXCollections.observableArrayList());
 
-    private final AbstractItem testResultCell;
-    private final TestResult result;
+    private final AbstractResultCell testResultCell;
+    private final TestITestResult result;
 
-    public CodesetPopupField(TextArea valueField, Button btnTemplate, List<ResultTemplate> resultTemplateList, AbstractItem testResultCell, TestResult result) {
+    public CodesetPopupField(TextArea valueField, Button btnTemplate, List<ResultTemplate> resultTemplateList, AbstractResultCell testResultCell, TestITestResult result) {
         this.valueField = valueField;
         this.btnTemplate = btnTemplate;
         this.resultTemplateList = resultTemplateList;

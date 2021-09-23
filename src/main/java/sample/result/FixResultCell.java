@@ -8,11 +8,11 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import sample.TestResult;
+import sample.entity.TestITestResult;
 import sample.common.AppUtils;
 import sample.images.AppImages;
 
-public class NumItem extends AbstractItem {
+public class FixResultCell extends AbstractResultCell {
 
     @FXML private AnchorPane rootPane;
     @FXML private ImageView validationImage;
@@ -22,17 +22,19 @@ public class NumItem extends AbstractItem {
     @FXML private Label unitsLabel;
     @FXML private Label normLabel;
     @FXML private TextArea valueField;
+    @FXML private Button btnTemplate;
     @FXML private TextArea noteField;
     @FXML private ImageView pathologyImage;
 
-    private TestResult result;
+    private TestITestResult result;
+    private CodesetPopupField codesetPopupField;
 
     @FXML
     void initialize() {
 
     }
 
-    protected void fillData(TestResult result) {
+    protected void fillData(TestITestResult result) {
 
         textLabel.setText(result.getText());
         normLabel.setText(result.getNormText());
@@ -47,6 +49,7 @@ public class NumItem extends AbstractItem {
 //        menu.setHistory(result.getHistory());
 
         valueField.setText(result.getValue());
+        codesetPopupField = new CodesetPopupField(valueField, btnTemplate, result.getTemplateList(), this, result);
 
 //        cellSetting(result);
         Platform.runLater(this::updateHeight);

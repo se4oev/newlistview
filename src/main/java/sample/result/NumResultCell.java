@@ -2,14 +2,16 @@ package sample.result;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import sample.TestResult;
+import sample.entity.TestITestResult;
 import sample.common.AppUtils;
 import sample.images.AppImages;
 
-public class TextItem extends AbstractItem {
+public class NumResultCell extends AbstractResultCell {
 
     @FXML private AnchorPane rootPane;
     @FXML private ImageView validationImage;
@@ -22,14 +24,14 @@ public class TextItem extends AbstractItem {
     @FXML private TextArea noteField;
     @FXML private ImageView pathologyImage;
 
-    private TestResult result;
+    private TestITestResult result;
 
     @FXML
     void initialize() {
 
     }
 
-    protected void fillData(TestResult result) {
+    protected void fillData(TestITestResult result) {
 
         textLabel.setText(result.getText());
         normLabel.setText(result.getNormText());

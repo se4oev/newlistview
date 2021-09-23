@@ -1,13 +1,12 @@
 package sample.images;
 
 import javafx.scene.image.Image;
-import sample.TestResult;
+import sample.entity.TestITestResult;
 import sample.common.PathologyStatus;
 
 import java.io.File;
 import java.net.URL;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -52,7 +51,7 @@ public class AppImages extends Images {
         if (pathologyStatus == 0)
             return null;
         String fileName = "pathology_" + pathologyStatus;
-        if (pathologyStatus == TestResult.Pathology.PATHOLOGY)
+        if (pathologyStatus == TestITestResult.Pathology.PATHOLOGY)
             fileName = "pathology";
         return createImage("status/" + fileName + ".png");
     }

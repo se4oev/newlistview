@@ -1,6 +1,6 @@
-package sample;
+package sample.entity;
 
-public interface ResultItem {
+public interface ITestResult {
 
     void setId(Long id);
 

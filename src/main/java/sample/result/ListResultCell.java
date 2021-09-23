@@ -1,18 +1,19 @@
 package sample.result;
 
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import sample.TestResult;
+import sample.entity.TestITestResult;
 import sample.common.AppUtils;
+import sample.common.BaseEvent;
 import sample.images.AppImages;
 
-public class FixItem extends AbstractItem {
+public class ListResultCell extends AbstractResultCell {
 
     @FXML private AnchorPane rootPane;
     @FXML private ImageView validationImage;
@@ -26,7 +27,6 @@ public class FixItem extends AbstractItem {
     @FXML private TextArea noteField;
     @FXML private ImageView pathologyImage;
 
-    private TestResult result;
     private CodesetPopupField codesetPopupField;
 
     @FXML
@@ -34,8 +34,16 @@ public class FixItem extends AbstractItem {
 
     }
 
-    protected void fillData(TestResult result) {
-
+    protected void fillData(TestITestResult result) {
+        valueField.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode() == KeyCode.ENTER) {
+                    onEnter();
+                    keyEvent.consume();
+                }
+            }
+        });
         textLabel.setText(result.getText());
         normLabel.setText(result.getNormText());
         unitsLabel.setText(result.getUnits());
@@ -53,6 +61,24 @@ public class FixItem extends AbstractItem {
 
 //        cellSetting(result);
         Platform.runLater(this::updateHeight);
+    }
+
+    private void onEnter() {
+        if (hasChanged()) {
+            fireEvent(new BaseEvent<>(this, IResultEvents.RESULT_CHANGED, getItem()));
+            fireEvent(new BaseEvent<>(this, IResultEvents.NEXT_CELL));
+        } else {
+            fireEvent(new BaseEvent<>(this, IResultEvents.NEXT_CELL));
+            System.out.println(this.getParent());
+        }
+    }
+
+    private boolean hasChanged() {
+        if (getItem().getValue().equals(valueField.getText())) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     private void updateStatusImage() {

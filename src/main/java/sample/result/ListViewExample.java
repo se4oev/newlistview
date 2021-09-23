@@ -17,9 +17,9 @@ import javafx.scene.control.skin.VirtualFlow;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import sample.TestResult;
+import sample.entity.TestITestResult;
 import sample.TestResultLoader;
-import sample.ResultType;
+import sample.entity.ResultType;
 
 public class ListViewExample implements Initializable {
 
@@ -83,7 +83,7 @@ public class ListViewExample implements Initializable {
         resultList.getSelectionModel().selectNext();
     }
 
-    private <T extends Event> void saveResult(TestResult t) {
+    private <T extends Event> void saveResult(TestITestResult t) {
         System.out.println(t.getValue());
     }
 
@@ -91,7 +91,7 @@ public class ListViewExample implements Initializable {
         try {
             ObservableList<Pane> list = FXCollections.observableArrayList();
             for (int i = 1; i <= 20; i++) {
-                TestResult testResult = new TestResultLoader().getTestResult();
+                TestITestResult testResult = new TestResultLoader().getTestResult();
                 String className = "";
                 if (testResult.getResultType() == ResultType.LIST) {
                     className = "ListItem.fxml";
@@ -106,7 +106,7 @@ public class ListViewExample implements Initializable {
                 }
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(className));
                 Pane listItem = fxmlLoader.load();
-                AbstractItem controller = fxmlLoader.getController();
+                AbstractResultCell controller = fxmlLoader.getController();
                 controller.setText("List Item " + i);
                 controller.setData(testResult);
                 list.add(listItem);

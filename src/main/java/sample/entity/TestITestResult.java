@@ -1,11 +1,11 @@
-package sample;
+package sample.entity;
 
 import sample.common.ResultTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestResult implements ResultItem {
+public class TestITestResult implements ITestResult {
 
     private Long id;
     private String text;

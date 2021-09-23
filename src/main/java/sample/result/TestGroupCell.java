@@ -3,13 +3,13 @@ package sample.result;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import sample.TestResult;
+import sample.entity.TestITestResult;
 
 /**
  * Created by karpenko on 23.09.2021
  * Description:
  */
-public class TestGroup extends AbstractItem {
+public class TestGroupCell extends AbstractResultCell {
 
     @FXML
     AnchorPane rootPane;
@@ -17,7 +17,7 @@ public class TestGroup extends AbstractItem {
     Label lblText;
 
     @Override
-    protected void fillData(TestResult result) {
+    protected void fillData(TestITestResult result) {
         lblText.setText(result.getText());
     }
 }
