@@ -1,3 +1,19 @@
 .test-group-cell {
     -fx-background-color: lemonchiffon;
 }
+
+.list-view .scroll-bar:horizontal,
+.list-view .scroll-bar:horizontal .increment-button {
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+    -fx-opacity: 0.0;
+    visibility: hidden;
+}
+
+.list-view .scroll-bar:vertical,
+.list-view .scroll-bar:vertical .increment-button {
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+    -fx-opacity: 0.0;
+    visibility: hidden;
+}
