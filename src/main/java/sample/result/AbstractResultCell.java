@@ -1,15 +1,11 @@
 package sample.result;
 
 import javafx.scene.control.ListCell;
-import sample.entity.TestITestResult;
 
-public abstract class AbstractResultCell extends ListCell<TestITestResult> {
+public abstract class AbstractResultCell<T> extends ListCell<T> {
 
-    public void setData(TestITestResult result) {
-        setItem(result);
-        this.fillData(result);
+    @Override
+    protected void updateItem(T item, boolean b) {
+        super.updateItem(item, b);
     }
-
-    protected abstract void fillData(TestITestResult result);
-
 }

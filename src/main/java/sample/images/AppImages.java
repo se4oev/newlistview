@@ -1,7 +1,7 @@
 package sample.images;
 
 import javafx.scene.image.Image;
-import sample.entity.TestITestResult;
+import sample.entity.TestResult;
 import sample.common.PathologyStatus;
 
 import java.io.File;
@@ -51,7 +51,7 @@ public class AppImages extends Images {
         if (pathologyStatus == 0)
             return null;
         String fileName = "pathology_" + pathologyStatus;
-        if (pathologyStatus == TestITestResult.Pathology.PATHOLOGY)
+        if (pathologyStatus == TestResult.Pathology.PATHOLOGY)
             fileName = "pathology";
         return createImage("status/" + fileName + ".png");
     }

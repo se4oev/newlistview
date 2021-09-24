@@ -1,32 +1,31 @@
 package sample;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.ListView;
 import javafx.scene.control.skin.VirtualFlow;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import sample.entity.TestITestResult;
 import sample.entity.ResultType;
-import sample.result.AbstractResultCell;
+import sample.entity.TestResult;
 import sample.result.IResultEvents;
+import sample.result.TestResultCellFactory;
 import sample.utils.TestResultLoader;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class MainPane implements Initializable {
 
     @FXML
-    private ListView resultList;
+    private ListView<TestResult> resultList;
 
     @FXML
     Pane pane;
@@ -36,8 +35,6 @@ public class MainPane implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        loadData();
-
         pane.setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.F5) {
                 refreshAll();
@@ -53,9 +50,37 @@ public class MainPane implements Initializable {
                 selectItem(resultList, !e.isShiftDown());
             }
         });
+
+        resultList.setCellFactory((TestResultCellFactory<TestResult>) this::initCell);
+
+        loadData();
     }
 
-    private void selectItem(ListView listView, boolean b) {
+    private Node initCell(TestResult item) {
+        ResultType resultType = item.getResultType();
+        String className = "";
+        if (resultType == ResultType.LIST) {
+            className = "result/ListItem.fxml";
+        } else if (resultType == ResultType.FIX_LIST) {
+            className = "result/FixItem.fxml";
+        } else if (resultType == ResultType.NUM) {
+            className = "result/NumItem.fxml";
+        } else if (resultType == ResultType.TEXT) {
+            className = "result/TextItem.fxml";
+        } else if (resultType == ResultType.TEST_GROUP) {
+            className = "result/TestGroup.fxml";
+        }
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(className));
+        Pane pane = new Pane();
+        try {
+            pane = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return pane;
+    }
+
+    private void selectItem(ListView<TestResult> listView, boolean b) {
         if (b) {
             int oldIndex = listView.getSelectionModel().getSelectedIndex();
             int newIndex = oldIndex + 1;
@@ -85,39 +110,17 @@ public class MainPane implements Initializable {
         resultList.getSelectionModel().selectNext();
     }
 
-    private <T extends Event> void saveResult(TestITestResult t) {
+    private <T extends Event> void saveResult(TestResult t) {
         System.out.println(t.getValue());
     }
 
     private void loadData() {
-        try {
-            ObservableList<Pane> list = FXCollections.observableArrayList();
-            for (int i = 1; i <= 20; i++) {
-                TestITestResult testResult = new TestResultLoader().getTestResult();
-                String className = "";
-                if (testResult.getResultType() == ResultType.LIST) {
-                    className = "ListItem.fxml";
-                } else if (testResult.getResultType() == ResultType.FIX_LIST) {
-                    className = "FixItem.fxml";
-                } else if (testResult.getResultType() == ResultType.NUM) {
-                    className = "NumItem.fxml";
-                } else if (testResult.getResultType() == ResultType.TEXT) {
-                    className = "TextItem.fxml";
-                } else if (testResult.getResultType() == ResultType.TEST_GROUP) {
-                    className = "TestGroup.fxml";
-                }
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(className));
-                Pane listItem = fxmlLoader.load();
-                AbstractResultCell controller = fxmlLoader.getController();
-                controller.setText("List Item " + i);
-                controller.setData(testResult);
-                list.add(listItem);
-
-            }
-            resultList.getItems().addAll(list);
-        } catch (IOException ex) {
-            Logger.getLogger(MainPane.class.getName()).log(Level.SEVERE, null, ex);
+        ObservableList<TestResult> list = FXCollections.observableArrayList();
+        for (int i = 1; i <= 20; i++) {
+            TestResult testResult = new TestResultLoader().getTestResult();
+            list.add(testResult);
         }
+        resultList.setItems(list);
     }
 
     private void refreshAll() {

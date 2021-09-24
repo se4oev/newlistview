@@ -5,7 +5,7 @@ import sample.common.ResultTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestITestResult implements ITestResult {
+public class TestResult implements ITestResult {
 
     private Long id;
     private String text;

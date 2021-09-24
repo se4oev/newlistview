@@ -8,11 +8,11 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import sample.entity.TestITestResult;
+import sample.entity.TestResult;
 import sample.common.AppUtils;
 import sample.images.AppImages;
 
-public class FixResultCell extends AbstractResultCell {
+public class FixResultCell extends AbstractResultCell<TestResult> {
 
     @FXML private AnchorPane rootPane;
     @FXML private ImageView validationImage;
@@ -26,7 +26,7 @@ public class FixResultCell extends AbstractResultCell {
     @FXML private TextArea noteField;
     @FXML private ImageView pathologyImage;
 
-    private TestITestResult result;
+    private TestResult result;
     private CodesetPopupField codesetPopupField;
 
     @FXML
@@ -34,7 +34,7 @@ public class FixResultCell extends AbstractResultCell {
 
     }
 
-    protected void fillData(TestITestResult result) {
+    protected void fillData(TestResult result) {
 
         textLabel.setText(result.getText());
         normLabel.setText(result.getNormText());

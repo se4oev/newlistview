@@ -7,11 +7,11 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import sample.entity.TestITestResult;
+import sample.entity.TestResult;
 import sample.common.AppUtils;
 import sample.images.AppImages;
 
-public class NumResultCell extends AbstractResultCell {
+public class NumResultCell extends AbstractResultCell<TestResult> {
 
     @FXML private AnchorPane rootPane;
     @FXML private ImageView validationImage;
@@ -24,14 +24,14 @@ public class NumResultCell extends AbstractResultCell {
     @FXML private TextArea noteField;
     @FXML private ImageView pathologyImage;
 
-    private TestITestResult result;
+    private TestResult result;
 
     @FXML
     void initialize() {
 
     }
 
-    protected void fillData(TestITestResult result) {
+    protected void fillData(TestResult result) {
 
         textLabel.setText(result.getText());
         normLabel.setText(result.getNormText());

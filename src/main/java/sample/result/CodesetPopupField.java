@@ -9,7 +9,7 @@ import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.*;
-import sample.entity.TestITestResult;
+import sample.entity.TestResult;
 import sample.common.ResultTemplate;
 
 import java.util.ArrayList;
@@ -41,9 +41,9 @@ public class CodesetPopupField {
     private FilteredList<MenuItem> filteredItems = new FilteredList<>(FXCollections.observableArrayList());
 
     private final AbstractResultCell testResultCell;
-    private final TestITestResult result;
+    private final TestResult result;
 
-    public CodesetPopupField(TextArea valueField, Button btnTemplate, List<ResultTemplate> resultTemplateList, AbstractResultCell testResultCell, TestITestResult result) {
+    public CodesetPopupField(TextArea valueField, Button btnTemplate, List<ResultTemplate> resultTemplateList, AbstractResultCell testResultCell, TestResult result) {
         this.valueField = valueField;
         this.btnTemplate = btnTemplate;
         this.resultTemplateList = resultTemplateList;

@@ -8,12 +8,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import sample.entity.TestITestResult;
+import sample.entity.TestResult;
 import sample.common.AppUtils;
 import sample.common.BaseEvent;
 import sample.images.AppImages;
 
-public class ListResultCell extends AbstractResultCell {
+public class ListResultCell extends AbstractResultCell<TestResult> {
 
     @FXML private AnchorPane rootPane;
     @FXML private ImageView validationImage;
@@ -34,7 +34,7 @@ public class ListResultCell extends AbstractResultCell {
 
     }
 
-    protected void fillData(TestITestResult result) {
+    protected void fillData(TestResult result) {
         valueField.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
