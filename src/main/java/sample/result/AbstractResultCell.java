@@ -8,4 +8,6 @@ public abstract class AbstractResultCell<T> extends ListCell<T> {
     protected void updateItem(T item, boolean b) {
         super.updateItem(item, b);
     }
+
+    abstract void fillData(T item);
 }

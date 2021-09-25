@@ -1,7 +1,6 @@
 package sample.result;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import sample.entity.TestResult;
@@ -20,5 +19,10 @@ public class TestGroupCell extends AbstractResultCell<TestResult> {
     @Override
     protected void updateItem(TestResult item, boolean b) {
         super.updateItem(item, b);
+    }
+
+    @Override
+    void fillData(TestResult item) {
+
     }
 }
