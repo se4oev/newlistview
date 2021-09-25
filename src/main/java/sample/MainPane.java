@@ -4,21 +4,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.control.skin.VirtualFlow;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import sample.entity.ResultType;
 import sample.entity.TestResult;
+import sample.result.CodeCell;
 import sample.result.IResultEvents;
 import sample.result.TestResultCellFactory;
 import sample.utils.TestResultLoader;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -43,10 +41,9 @@ public class MainPane implements Initializable {
 
         resultList.addEventFilter(IResultEvents.RESULT_CHANGED, e -> saveResult(e.getData()));
         resultList.addEventFilter(IResultEvents.NEXT_CELL, e -> nextCell());
-
-        pane.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
-            e.consume();
+        resultList.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
             if (e.getCode() == KeyCode.TAB) {
+                e.consume();
                 selectItem(resultList, !e.isShiftDown());
             }
         });
@@ -57,27 +54,9 @@ public class MainPane implements Initializable {
     }
 
     private Node initCell(TestResult item) {
-        ResultType resultType = item.getResultType();
-        String className = "";
-        if (resultType == ResultType.LIST) {
-            className = "result/ListItem.fxml";
-        } else if (resultType == ResultType.FIX_LIST) {
-            className = "result/FixItem.fxml";
-        } else if (resultType == ResultType.NUM) {
-            className = "result/NumItem.fxml";
-        } else if (resultType == ResultType.TEXT) {
-            className = "result/TextItem.fxml";
-        } else if (resultType == ResultType.TEST_GROUP) {
-            className = "result/TestGroup.fxml";
-        }
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(className));
-        Pane pane = new Pane();
-        try {
-            pane = fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return pane;
+        CodeCell node = new CodeCell();
+        node.fillData(item);
+        return node;
     }
 
     private void selectItem(ListView<TestResult> listView, boolean b) {
